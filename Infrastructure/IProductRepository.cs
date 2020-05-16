@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public interface IRepository
+    public interface IProductRepository
     {
         Product Get(string code);
     }

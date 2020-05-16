@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public class Repository<T> : IRepository 
+    public class ProductRepository<T> : IProductRepository 
         where T : class
     {
         public Product Get(string code)
