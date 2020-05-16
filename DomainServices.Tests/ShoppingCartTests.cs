@@ -27,5 +27,11 @@ namespace DomainServices.Tests
 
             Assert.Equal($"The code: {code} doesn´t exist.", ex.Message);
         }
+
+        [Fact(Skip ="pending")]
+        public void The_Item_Is_Added_To_The_Shopping_Cart_Correctly()
+        {
+         
+        }
     }
 }

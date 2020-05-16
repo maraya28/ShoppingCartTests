@@ -21,7 +21,6 @@ namespace DomainServices
             Items ??= new List<Product>();
         }
 
-
         public List<Product> Items { get; private set; }
 
         public void AddItem(string codeItem)
