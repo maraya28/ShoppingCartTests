@@ -6,7 +6,7 @@ using System.Text;
 namespace Infrastructure
 {
     public class Repository<T> : IRepository 
-        where T : EntityModel
+        where T : class
     {
         public Product Get(string code)
         {

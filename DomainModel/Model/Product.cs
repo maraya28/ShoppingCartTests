@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DomainModel.Model
 {
-    public class Product : EntityModel
+    public class Product 
     {
         public Guid Code { get; set; }
         public string Name { get; set; }
