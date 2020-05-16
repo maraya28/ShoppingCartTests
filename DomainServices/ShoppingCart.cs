@@ -16,22 +16,24 @@ namespace DomainServices
             _productRepository = productRepository;
         }
 
+        private void IntializeItems()
+        {
+            Items ??= new List<Product>();
+        }
+
+
         public List<Product> Items { get; private set; }
 
         public void AddItem(string codeItem)
         {
-            try
-            {
-                var item = _productRepository.Get(codeItem);
-                if (item == null)
-                    throw new ShoppingCartException("The code doesn´t exist");
-                Items.Add(item);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-           
+            IntializeItems();
+
+            var item = _productRepository.Get(codeItem);
+            if (item == null)
+                throw new ShoppingCartException($"The code: {codeItem} doesn´t exist.");
+            Items.Add(item);
+
+
         }
     }
 }

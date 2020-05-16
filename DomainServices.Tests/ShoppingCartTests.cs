@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using DomainModel;
+using Infrastructure;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,10 @@ namespace DomainServices.Tests
         [Fact]
         public void The_Code_Product_Does_Not_Exist()
         {
-            _shoppingCart.AddItem("10020068SL");
+            var code = "10020068SL";
+            var ex = Assert.Throws<ShoppingCartException>(() => _shoppingCart.AddItem(code));
+
+            Assert.Equal($"The code: {code} doesn´t exist.", ex.Message);
         }
     }
 }
